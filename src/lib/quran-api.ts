@@ -31,11 +31,25 @@ interface RawSurahEdition {
   ayahs: RawAyah[];
 }
 
-export type ReciterId = "ar.alafasy" | "ar.minshawi";
+export type ReciterId =
+  | "ar.alafasy"
+  | "ar.minshawi"
+  | "ar.abdurrahmaansudais"
+  | "ar.mahermuaiqly"
+  | "ar.hudhaify"
+  | "ar.muhammadayyoub"
+  | "ar.hanirifai"
+  | "ar.ibrahimakhbar";
 
 export const RECITERS: { id: ReciterId; nameAr: string; nameEn: string }[] = [
-  { id: "ar.alafasy",  nameAr: "مشاري العفاسي",          nameEn: "Mishary Al-Afasy"    },
-  { id: "ar.minshawi", nameAr: "محمد صديق المنشاوي",     nameEn: "M. S. Al-Minshawi"   },
+  { id: "ar.alafasy",             nameAr: "مشاري العفاسي",          nameEn: "Mishary Al-Afasy"      },
+  { id: "ar.minshawi",            nameAr: "محمد صديق المنشاوي",     nameEn: "M. S. Al-Minshawi"     },
+  { id: "ar.abdurrahmaansudais",  nameAr: "عبدالرحمن السديس",       nameEn: "Abdul Rahman Al-Sudais" },
+  { id: "ar.mahermuaiqly",        nameAr: "ماهر المعيقلي",          nameEn: "Maher Al-Muaiqly"      },
+  { id: "ar.hudhaify",            nameAr: "علي الحذيفي",            nameEn: "Ali Al-Hudhaify"       },
+  { id: "ar.muhammadayyoub",      nameAr: "محمد أيوب",              nameEn: "Muhammad Ayyoub"       },
+  { id: "ar.hanirifai",           nameAr: "هاني الرفاعي",           nameEn: "Hani Ar-Rifai"         },
+  { id: "ar.ibrahimakhbar",       nameAr: "إبراهيم الأخضر",         nameEn: "Ibrahim Al-Akhdar"     },
 ];
 
 export async function getSurah(id: number, reciter: ReciterId = "ar.alafasy"): Promise<SurahDetail> {

@@ -168,21 +168,17 @@ export default function SurahClient() {
             <span className="text-xs text-slate-400 dark:text-slate-500 font-cairo">
               {lang === "ar" ? "القارئ" : "Reciter"}
             </span>
-            <div className="flex rounded-full border border-slate-200 dark:border-slate-700 overflow-hidden text-xs font-cairo">
+            <select
+              value={reciter}
+              onChange={(e) => setReciter(e.target.value as ReciterId)}
+              className="px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-cairo cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
               {RECITERS.map((r) => (
-                <button
-                  key={r.id}
-                  onClick={() => setReciter(r.id)}
-                  className={
-                    reciter === r.id
-                      ? "px-3 py-1.5 bg-emerald-600 text-white transition-colors"
-                      : "px-3 py-1.5 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-                  }
-                >
+                <option key={r.id} value={r.id}>
                   {lang === "ar" ? r.nameAr : r.nameEn}
-                </button>
+                </option>
               ))}
-            </div>
+            </select>
           </div>
 
           <button
