@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/noor-alquran//_next/:path+",
+        "destination": "/noor-alquran/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
