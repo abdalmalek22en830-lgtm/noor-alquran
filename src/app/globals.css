@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+/* ── Islamic Design Tokens ── */
+@theme {
+  /* Gold palette */
+  --color-gold-50: #fffbf0;
+  --color-gold-100: #fef3c7;
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #d4a017;
+  --color-gold-500: #b8860b;
+  --color-gold-600: #996515;
+  --color-gold-700: #7c5210;
+  --color-gold-800: #5f3f0c;
+  --color-gold-900: #422c09;
+
+  /* Emerald Islamic palette */
+  --color-islamic-50: #ecfdf5;
+  --color-islamic-100: #d1fae5;
+  --color-islamic-200: #a7f3d0;
+  --color-islamic-300: #6ee7b7;
+  --color-islamic-400: #34d399;
+  --color-islamic-500: #10b981;
+  --color-islamic-600: #059669;
+  --color-islamic-700: #047857;
+  --color-islamic-800: #065f46;
+  --color-islamic-900: #064e3b;
+
+  /* Canvas */
+  --color-cream: #fffbf0;
+
+  /* Fonts */
+  --font-amiri: "Amiri", "Traditional Arabic", serif;
+  --font-cairo: "Cairo", "Segoe UI", sans-serif;
+  --font-inter: "Inter", system-ui, sans-serif;
+}
+
+/* ── CSS Variables for theming ── */
+:root {
+  --bg: #fffbf0;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --fg: #1e293b;
+  --fg-muted: #64748b;
+  --border: rgba(212, 160, 23, 0.25);
+}
+
+.dark {
+  --bg: #0d0f0a;
+  --bg-card: rgba(15, 23, 42, 0.6);
+  --fg: #f1f5f9;
+  --fg-muted: #94a3b8;
+  --border: rgba(212, 160, 23, 0.15);
+}
+
+/* ── Base styles ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-cairo), system-ui, sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Fonts ── */
+.font-amiri {
+  font-family: var(--font-amiri);
+}
+.font-cairo {
+  font-family: var(--font-cairo);
+}
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+/* ── Islamic decorative scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 160, 23, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 160, 23, 0.7);
+}
+
+/* ── Tailwind utilities ── */
+@layer utilities {
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+  .text-gold-400 { color: var(--color-gold-400); }
+  .text-gold-500 { color: var(--color-gold-500); }
+  .text-gold-600 { color: var(--color-gold-600); }
+  .text-gold-700 { color: var(--color-gold-700); }
+  .border-gold-200\/30 { border-color: color-mix(in srgb, var(--color-gold-200) 30%, transparent); }
+  .border-gold-200\/50 { border-color: color-mix(in srgb, var(--color-gold-200) 50%, transparent); }
+  .border-gold-300 { border-color: var(--color-gold-300); }
+  .border-gold-400\/60 { border-color: color-mix(in srgb, var(--color-gold-400) 60%, transparent); }
+  .border-gold-700 { border-color: var(--color-gold-700); }
+  .border-gold-800\/20 { border-color: color-mix(in srgb, var(--color-gold-800) 20%, transparent); }
+  .border-gold-800\/30 { border-color: color-mix(in srgb, var(--color-gold-800) 30%, transparent); }
+  .bg-gold-50 { background-color: var(--color-gold-50); }
+  .bg-gold-50\/50 { background-color: color-mix(in srgb, var(--color-gold-50) 50%, transparent); }
+  .bg-gold-100 { background-color: var(--color-gold-100); }
+  .bg-gold-400 { background-color: var(--color-gold-400); }
+  .bg-gold-900\/10 { background-color: color-mix(in srgb, var(--color-gold-900) 10%, transparent); }
+  .bg-gold-900\/20 { background-color: color-mix(in srgb, var(--color-gold-900) 20%, transparent); }
+  .bg-gold-900\/30 { background-color: color-mix(in srgb, var(--color-gold-900) 30%, transparent); }
+  .via-gold-400\/50 { --tw-gradient-via: color-mix(in srgb, var(--color-gold-400) 50%, transparent); }
+  .shadow-gold-100\/50 { --tw-shadow-color: color-mix(in srgb, var(--color-gold-100) 50%, transparent); }
+  .shadow-gold-900\/20 { --tw-shadow-color: color-mix(in srgb, var(--color-gold-900) 20%, transparent); }
+  .hover\:border-gold-400\/60:hover { border-color: color-mix(in srgb, var(--color-gold-400) 60%, transparent); }
+  .hover\:border-gold-600\/40:hover { border-color: color-mix(in srgb, var(--color-gold-600) 40%, transparent); }
+  .dark\:border-gold-600\/40:is(.dark *) { border-color: color-mix(in srgb, var(--color-gold-600) 40%, transparent); }
+  .dark\:border-gold-800\/20:is(.dark *) { border-color: color-mix(in srgb, var(--color-gold-800) 20%, transparent); }
+  .dark\:border-gold-800\/30:is(.dark *) { border-color: color-mix(in srgb, var(--color-gold-800) 30%, transparent); }
+  .dark\:text-gold-400:is(.dark *) { color: var(--color-gold-400); }
+  .dark\:bg-gold-900\/20:is(.dark *) { background-color: color-mix(in srgb, var(--color-gold-900) 20%, transparent); }
+  .dark\:bg-gold-900\/30:is(.dark *) { background-color: color-mix(in srgb, var(--color-gold-900) 30%, transparent); }
+  .hover\:bg-gold-50:hover { background-color: var(--color-gold-50); }
+  .dark\:hover\:bg-gold-900\/20:is(.dark *):hover { background-color: color-mix(in srgb, var(--color-gold-900) 20%, transparent); }
+
+  /* Emerald aliases for ease */
+  .text-emerald-600 { color: #059669; }
+  .text-emerald-700 { color: #047857; }
+  .dark\:text-emerald-400:is(.dark *) { color: #34d399; }
+  .dark\:text-emerald-300:is(.dark *) { color: #6ee7b7; }
+  .bg-emerald-50 { background-color: #ecfdf5; }
+  .bg-emerald-100 { background-color: #d1fae5; }
+  .bg-emerald-600 { background-color: #059669; }
+  .hover\:bg-emerald-700:hover { background-color: #047857; }
+  .border-emerald-300 { border-color: #6ee7b7; }
+  .dark\:border-emerald-700:is(.dark *) { border-color: #047857; }
+  .bg-emerald-900\/40 { background-color: color-mix(in srgb, #064e3b 40%, transparent); }
+  .bg-emerald-900\/20 { background-color: color-mix(in srgb, #064e3b 20%, transparent); }
+  .dark\:bg-emerald-900\/40:is(.dark *) { background-color: color-mix(in srgb, #064e3b 40%, transparent); }
+  .dark\:bg-emerald-900\/20:is(.dark *) { background-color: color-mix(in srgb, #064e3b 20%, transparent); }
+  .text-emerald-800 { color: #065f46; }
+  .hover\:bg-emerald-50:hover { background-color: #ecfdf5; }
+  .dark\:hover\:bg-emerald-900\/20:is(.dark *):hover { background-color: color-mix(in srgb, #064e3b 20%, transparent); }
+  .dark\:hover\:text-emerald-400:is(.dark *):hover { color: #34d399; }
+  .hover\:text-emerald-600:hover { color: #059669; }
+  .hover\:text-emerald-700:hover { color: #047857; }
+
+  /* Slate dark */
+  .dark\:bg-slate-950\/90:is(.dark *) { background-color: color-mix(in srgb, #020617 90%, transparent); }
+  .dark\:bg-slate-950\/95:is(.dark *) { background-color: color-mix(in srgb, #020617 95%, transparent); }
+  .dark\:bg-slate-900\/60:is(.dark *) { background-color: color-mix(in srgb, #0f172a 60%, transparent); }
+  .dark\:bg-slate-950:is(.dark *) { background-color: #020617; }
+  .dark\:text-slate-100:is(.dark *) { color: #f1f5f9; }
+  .dark\:text-slate-400:is(.dark *) { color: #94a3b8; }
+  .dark\:text-slate-500:is(.dark *) { color: #64748b; }
+  .dark\:border-slate-700:is(.dark *) { border-color: #334155; }
+  .dark\:border-slate-800:is(.dark *) { border-color: #1e293b; }
+  .dark\:hover\:bg-slate-800:is(.dark *):hover { background-color: #1e293b; }
+  .dark\:bg-slate-800:is(.dark *) { background-color: #1e293b; }
+  .dark\:bg-slate-700:is(.dark *) { background-color: #334155; }
+  .dark\:text-slate-300:is(.dark *) { color: #cbd5e1; }
+  .dark\:text-slate-200:is(.dark *) { color: #e2e8f0; }
+  .dark\:hover\:bg-slate-700:is(.dark *):hover { background-color: #334155; }
+  .dark\:hover\:text-slate-200:is(.dark *):hover { color: #e2e8f0; }
+  .dark\:placeholder\:text-slate-500:is(.dark *)::placeholder { color: #64748b; }
+  .dark\:focus\:border-emerald-600:is(.dark *):focus { border-color: #059669; }
+
+  /* Amber badge */
+  .bg-amber-50 { background-color: #fffbeb; }
+  .text-amber-700 { color: #b45309; }
+  .dark\:bg-amber-900\/20:is(.dark *) { background-color: color-mix(in srgb, #451a03 20%, transparent); }
+  .dark\:text-amber-400:is(.dark *) { color: #fbbf24; }
+  .bg-blue-50 { background-color: #eff6ff; }
+  .text-blue-700 { color: #1d4ed8; }
+  .dark\:bg-blue-900\/20:is(.dark *) { background-color: color-mix(in srgb, #1e3a8a 20%, transparent); }
+  .dark\:text-blue-400:is(.dark *) { color: #60a5fa; }
+  .hover\:text-blue-600:hover { color: #2563eb; }
+  .hover\:bg-blue-50:hover { background-color: #eff6ff; }
+  .dark\:hover\:text-blue-400:is(.dark *):hover { color: #60a5fa; }
+  .dark\:hover\:bg-blue-900\/20:is(.dark *):hover { background-color: color-mix(in srgb, #1e3a8a 20%, transparent); }
+}
