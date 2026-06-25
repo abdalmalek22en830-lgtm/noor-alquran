@@ -5,7 +5,7 @@ import { IslamicPattern } from "@/components/IslamicPattern";
 export const revalidate = 86400;
 
 export default async function SurahsPage() {
-  let surahs = [];
+  let surahs: Awaited<ReturnType<typeof getSurahs>> = [];
   try {
     surahs = await getSurahs();
   } catch {}
